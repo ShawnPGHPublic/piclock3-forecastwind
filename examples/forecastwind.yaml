@@ -1,0 +1,42 @@
+# python3 PyQtPiClock3.py plugins/forecastwind/examples/forecastwind.yaml
+
+pages:
+  clock-page: {order: 0, layout: classic, theme: circuit}
+
+language: en
+
+location:
+  latitude: 45
+  longitude: -93
+  timezone:
+
+providers:
+  openmeteo:
+    plugin: PiClock3.OpenMeteo
+    
+  openweathermap:
+    plugin: plugins.OpenWeatherMapWind
+    apikey: '{apikeys.owmapi}'
+    refresh: 30
+    forecast-days: 6
+
+widgets:
+  clock: {plugin: PiClock3.AnalogClock, region: clock}
+  date:  {plugin: PiClock3.Date, region: date}
+
+  forecast:
+    plugin: plugins.ForecastWind
+    region: forecast
+    forecast-provider: openweathermap
+    hourly: 3
+    daily: 6
+    hourly-step: 3   # free OWM grid is already 3 hours    
+
+  current-conditions:
+    plugin: PiClock3.CurrentConditions
+    region: current
+    conditions-provider: openmeteo
+
+logging-level: info
+
+apikeys: !include ApiKeys.yaml

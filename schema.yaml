@@ -1,0 +1,52 @@
+description: >
+  Hours then days, one cell per period, with forecast wind drawn to
+  the right of the icon as current/gust and no unit.
+
+settings:
+
+  forecast-provider:
+    is: provider
+    provides: [hourly, daily]
+    required: true
+    help: The provider the forecast comes from.
+
+  hourly:
+    is: number
+    help: How many cells show the hours ahead.
+  daily:
+    is: number
+    help: How many cells show the days ahead, after the hours.
+  hourly-step:
+    is: number
+    help: How many hours apart the hourly cells are.
+
+  hour-format:
+    is: strftime
+    help: How an hourly cell's time is written.
+  day-format:
+    is: strftime
+    help: How a daily cell's day is written.
+
+  layout:
+    is: block
+    help: Where each part sits inside one cell, as fractions of it.
+    of:
+      icon:
+        is: part
+        help: The picture of the sky.
+      wind:
+        is: part
+        help: Forecast wind as current/gust, to the right of the icon.
+      wx:
+        is: part
+        help: The sky in words, chance of rain or snow, and temperature.
+      day:
+        is: part
+        help: The hour or the day the cell is for.
+      attribution:
+        is: part
+        help: The forecast's source, drawn in the last cell only.
+
+  icons-folder:
+    is: string
+    help: The set of weather pictures drawn.

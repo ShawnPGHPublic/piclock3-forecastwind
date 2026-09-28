@@ -1,0 +1,25 @@
+kind: forecast-wind
+
+forecast-provider: ''
+
+hourly: 3
+daily: 6
+hourly-step: 3
+
+hour-format: '%A {language.time-format}%p'
+day-format: '%A'
+
+layout:
+  icon: {left: 0.00, top: 0.00, width: 0.20, height: 1.00}
+  wind: {left: 0.42, top: 0.6, width: 0.58, height: 0.44,
+         font-size: 0.15, align: left-top, wrap: false}
+  wx:   {left: 0.42, top: 0.02, width: 0.58, height: 0.74,
+         font-size: 0.12, align: left-top, wrap: true}
+  day:  {left: 0.38, bottom: 0.02, width: 0.62, height: 0.26,
+         font-size: 0.17, align: right-bottom}
+
+  attribution: {left: 0.0, bottom: 0.02, width: .48, height: 0.1,
+                font-size: 0.08, align: left-bottom}
+
+
+icons-folder: icons-lightblue
