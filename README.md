@@ -4,15 +4,14 @@ Modified forecast display plugin: uses OpenWeatherMap data supplier to pull wind
 
 ## Install
 
+```
 cd ~/PiClock3
-
-git clone https://github.com/ShawnPGHPublic/piclock3-forecastwind
-plugins/forecastwind
-
+git clone https://github.com/ShawnPGHPublic/piclock3-forecastwind plugins/ForecastWind
+```
 ## Test
-
+```
 python3 PyQtPiClock3.py examples/forecastwind.yaml
-
+```
 ------------------------------------------------------------------------
 
 ### Use it
